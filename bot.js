@@ -84,11 +84,6 @@ if (!servers[message.guild.id]) servers[message.guild.id] = {
 
 switch (args[0].toLowerCase()) {
 
-case "ping":
-message.channel.send("Pinging...").then(pong => {
-        pong.edit(`Pong!\nTelk 2.0: **${pong.createdTimestamp - message.createdTimestamp}ms**\nAPI B5Galaxy: **${Math.round(bot.ping)}ms**`)
-      })
-break;
 case "play":
 if (!args[1]) return message.channel.sendMessage(":x: Please provide a link for me to play")
 if (!message.member.voiceChannel) return message.channel.sendMessage(":x: Sorry you must be in a voice channel to play music")
