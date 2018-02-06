@@ -1,16 +1,16 @@
 const Discord = require("discord.js");
 
-const ytdl = require('ytdl-core');
-
-const search = require('youtube-search');
+const yt = require('ytdl-core');
 
 const bot = new Discord.Client();
 
-const prefix = "=";
+var config = require("./config.json");
 
-var servers = {};
+var music = require("./playlist.json");
 
-var token = "NDA0DjUxNjM4Nek5NTMyLDUy.DUXL7A.RXDdcKyBaRTtkqKuSPmoViHDo7A";
+const prefix = config.prefix;
+
+var token = config.token;
 
 function play(connection, message) {
   var server = servers[message.guild.id];
